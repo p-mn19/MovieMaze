@@ -1,6 +1,7 @@
 const Card = ({ title }) => {
     return(
-        <div>
+        //inline styling
+        <div className="card">
             <h2>{title}</h2>
         </div>
     );
@@ -8,8 +9,7 @@ const Card = ({ title }) => {
 
 const App  = () => {
     return(
-        <div>
-            <h2>App</h2>
+        <div className="card-container">
             <Card title="The lion king"/>
             <Card title="Interstellar"/>
             <Card title="Men in black"/>
