@@ -36,4 +36,9 @@ h2{
 button{
   border:none;
   font-size:30px;
+  background-color:transparent;
+  width:100%;
+  text-align:right;
+  cursor: pointer; //to show that the button is clickable
+  
 }
