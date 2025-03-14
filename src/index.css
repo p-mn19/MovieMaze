@@ -32,3 +32,8 @@ h2{
   border-radius:10px;
   minHeight:100px;
 }
+
+button{
+  border:none;
+  font-size:30px;
+}
