@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from "./components/search";
 
 const App = () => {
-    const [searchTerm,setSearchTerm] = useState(initialState,'');
+    const [searchTerm,setSearchTerm] = useState('');
+    
+    useEffect(() => {
+        // Logic here
+      }, []);
+    
     return ( 
         <main>
             <div className="pattern"/>
