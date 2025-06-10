@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Search from "./components/search";
 
-const API_BASE_URL = ''
-const API_KEY = import.meta.env.VITE_TMD_API_KEY
+const API_BASE_URL = 'https://api.themoviedb.org/3';
+const API_KEY = import.meta.env.VITE_TMD_API_KEY;
 const App = () => {
     const [searchTerm,setSearchTerm] = useState('');
     
