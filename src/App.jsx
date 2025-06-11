@@ -18,6 +18,7 @@ const App = () => {
 
         } catch(error){
             console.error(`Error fetching movies: ${error}`);
+            setErrorMessage('Error fetching movies. Please try again later');
         }
     }
     useEffect(() => {
@@ -30,9 +31,15 @@ const App = () => {
             <div className="wrapper">
              <header>
                 <img src="./hero-img.png" alt="Hero Banner" />
-                <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy, Without the Hassle</h1>
+                <h1>Discover<span className="text-gradient">Movies</span> You'll Love-Effortlessly</h1>
+
+                <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
              </header>
-             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+             <section className="all-movies">
+                <h2>All Movies</h2>
+
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+             </section>
             </div>
         </main>
      );
