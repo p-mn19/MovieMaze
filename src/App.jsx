@@ -32,7 +32,7 @@ const App = () => {
 
         try{
             const endpoint = query 
-            ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}}`
+            ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
             :`${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
             const response = await fetch(endpoint,API_OPTIONS)

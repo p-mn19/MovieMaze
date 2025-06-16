@@ -13,7 +13,7 @@ const database = new Databases(client);
 export const updateSearchCount = async(searchTerm, movie) =>{
     //use AppWrite SDK to check if the search term exists in the db
     try{
-      const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID,queries[
+      const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID,[
         Query.equal('searchTerm',searchTerm) //matching what we have in our db to what the users are searching for
       ])  
 
@@ -21,16 +21,16 @@ export const updateSearchCount = async(searchTerm, movie) =>{
       if(result.documents.length>0){
         const doc = result.documents[0];
 
-        await database.updateDocument(DATABASE_ID,COLLECTION_ID,doc.$id,data={
+        await database.updateDocument(DATABASE_ID,COLLECTION_ID,doc.$id,{
             count: doc.count+1,
         })
         //if it dosent create a new doc with the search term and count as 1
       } else{
-        await database.createDocument(DATABASE_ID,COLLECTION_ID,ID.unique(),data={
+        await database.createDocument(DATABASE_ID,COLLECTION_ID,ID.unique(),{
             searchTerm,
             count: 1,
             movie_id: movie.id,
-            poster_url:`https://image.tmbd.org/t/p/w500${movie.poster_url}`,  
+            poster_url:`https://image.tmdb.org/t/p/w500${movie.poster_path}`,  
         })
       }
     }catch(error){
@@ -41,7 +41,7 @@ export const updateSearchCount = async(searchTerm, movie) =>{
 
 export const getTrendingMovies = async() => {
     try{
-        const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID, query[
+        const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID,[
             Query.limit(5),
             Query.orderDesc("count")
         ])
