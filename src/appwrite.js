@@ -1,4 +1,4 @@
-import { Client, Databases, ID } from "appwrite";
+import { Client, Databases, ID, Query } from "appwrite";
 
 const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = import.meta.env.VITE_APPWRITE_COLLECTION_ID;
@@ -38,6 +38,20 @@ export const updateSearchCount = async(searchTerm, movie) =>{
     }
 }
 
+
+export const getTrendingMovies = async() => {
+    try{
+        const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID, query[
+            Query.limit(5),
+            Query.orderDesc("count")
+        ])
+
+    return result.documents;
+
+    }catch(error){
+        console.error(error);
+    }
+}
 
 
 
