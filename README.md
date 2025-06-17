@@ -31,8 +31,6 @@ MovieMaze is a web app that showcases the **top trending movies** based on what 
 
 ---
 
----
-
 ## Acknowledgements
 
 This project is inspired by the [React.js 19 tutorial by JavascriptMastery](https://youtu.be/dCLhUialKPQ?si=cv0Y78_c-5hEdAzu).
