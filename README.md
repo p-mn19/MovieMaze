@@ -1,8 +1,33 @@
-# React + Vite
+# Movie Maze
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieMaze is a web app that showcases the **top trending movies** based on what people are searching most often. 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Fetches top trending movies via **TMDb API**
+- Tracks movie searches using **Appwrite**
+- Fast and dynamic UI using **React + Tailwind CSS**
+- Fully responsive for desktop and mobile
+- Debounced search input for optimized API calls
+
+---
+
+## Built With
+
+| Tech         | Role                        |
+|--------------|-----------------------------|
+| ReactJS      | Frontend framework          |
+| Tailwind CSS | Styling and responsiveness  |
+| Appwrite     | Backend for search logging  |
+| TMDb API     | Movie data source           |
+| React Hooks  | For component lifecycle and state |
+
+---
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/p-mn19/MovieMaze.git
+cd MovieMaze
